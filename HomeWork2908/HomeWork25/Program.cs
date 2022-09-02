@@ -7,6 +7,10 @@ Console.Clear();
 int result = 1;
 int GetPow (int numberA, int numberB)
 {
+    if (numberB == 0)
+    {
+        return 1;
+    }
     for (int i = 1; i <= numberB; i++)
     {
         result *= numberA;
