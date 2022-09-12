@@ -4,22 +4,32 @@
 
 1, -7, 567, 89, 223-> 3 */
 
-int M = new Random().Next(1, 10);
-Console.WriteLine($"Введите {M} чисел друг за другом: ");
+Console.Clear();
+Console.WriteLine($"Введите числа, как только хватит, введите stop: ");
 
 void AddArray(int[] arrayNumbers)
 {
-    for (int i = 0; i < M; i++)
+    for (int i = 0; ; i++)
     {
-      Console.Write($"Введите число {i+1}: ");
-      arrayNumbers[i] = Convert.ToInt32(Console.ReadLine());
+      string a = Console.ReadLine();
+      if(a == "stop")
+      {
+        break;
+      }
+      else
+      {
+        int b = Convert.ToInt32(a);
+        int size = i;
+        int[] array = new Array[size];
+        a = arr;
+        }
     }
 }
 
 void PrintAddArray(int[] arrayNumbers)
 {
     Console.Write("[");
-    for (int i = 0; i < M; i++)
+    for (int i = 0; ; i++)
     {
       Console.Write(arrayNumbers[i] + " ");
     }
@@ -30,7 +40,7 @@ void PrintAddArray(int[] arrayNumbers)
 int CheckPositiveCount(int[] arrayNumbers)
 {
     int count = 0;
-    for (int i = 0; i < M; i++)
+    for (int i = 0; i < countSize; i++)
     {
         if (arrayNumbers[i] > 0)
         {
@@ -40,8 +50,9 @@ int CheckPositiveCount(int[] arrayNumbers)
     return count;
 }
 
-int[] arrayNumbers = new int[M];
 
+int[] arrayNumbers = new int[size];
+int size = arrayNumbers.Length;
 AddArray(arrayNumbers);
 PrintAddArray(arrayNumbers);
 if (CheckPositiveCount(arrayNumbers) == 0)
