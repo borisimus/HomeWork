@@ -12,59 +12,42 @@
 вводим позиции по i и j -> если таких нет - выводим, что позиции не существует. Если есть - выводим элемент по этим индексам. */
 
 Console.Clear();
-int rows = GetLength[0];
-int columns = GetLength[1];
 
-double[,] GetArray(int rows, int columns)
+Console.Write("Введите индекс строки: ");
+int rows = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите индекс столбца: ");
+int columns = Convert.ToInt32(Console.ReadLine());
+
+
+int[,] GetArray(int rows, int columns)
 {
-    double[,] arrayResult = new double[rows, columns];
+    int[,] arrayResult = new int[rows, columns];
     for (int i = 0; i < rows; i++)
     {
         for (int j = 0; j < columns; j++)
         {
-           arrayResult[i, j] = new Random().Next(10);
+           arrayResult[i, j] = new Random().Next(100);
         }
     }
     return arrayResult;
 }
 
-bool Contains(int[,] array, int element)
+/* bool Contains(int[,] array, int rows, int columns)
 {
     for (int i = 0; i < array.GetLength(0); i++)
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
-            if (array[i, j] == element)
-            {
-                return true;
-            }
-            else
+            if (i > rows && j > columns)
             {
                 return false;
             }
         }
     }
-}
-bool PositionElement(int[,] array)
-{
-    double [,] result = new arr[rows, columns];
-    for (int i = 0; i < rows; i++)
-    {
-        for (int j = 0; j < columns; j++)
-        {
-            if (i < rows && j < columns)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-    }
-}
+    return true;
+}  */
 
-void ShowArray (double[,] arr)
+void ShowArray (int[,] arr)
 {
     int rows = arr.GetLength(0);
     int columns = arr.GetLength(1);
@@ -78,6 +61,15 @@ void ShowArray (double[,] arr)
     }
 }
 
-double[,] arr = GetArray(3, 4);
+
+int[,] arr = GetArray(10, 10);
 ShowArray(arr);
-Contains(arr(i, j), 45);
+
+if (rows < arr.GetLength(0) && columns < arr.GetLength(1)) 
+{
+    Console.WriteLine(arr[rows, columns]);
+}
+else 
+{
+    Console.WriteLine("Такой позиции в массиве не существует");
+}
