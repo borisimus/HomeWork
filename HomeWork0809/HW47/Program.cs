@@ -16,8 +16,7 @@ double[,] GetArray(int rows, int columns)
     {
         for (int j = 0; j < columns; j++)
         {
-            Random rnd = new Random();
-            arrayResult[i, j] = rnd.NextDouble() * 10;
+           arrayResult[i, j] = new Random().NextDouble() * 10;
         }
     }
     return arrayResult;
