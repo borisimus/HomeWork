@@ -42,7 +42,6 @@ Console.WriteLine($"Cтрока {minSumRow+1} имеет наименьшую с
         {
            array[i, j] = new Random().Next(10);
         }
-       /*  return arr; */
     }
  }
 
